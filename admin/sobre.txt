@@ -1,0 +1,322 @@
+Cadastro
+Data valid
+Escolher o plano
+Assina
+Confirma
+Abre o contrato (nome e cpf) / Aceitar 
+Pagamento
+Retorno (ok/nok)
+Email com senha provisória (link e login - cpf) Senha: cp + 6 primeiros digitos do cpf
+
+Foto principal, dentro dos Meus Dados (formato Story - Vertical)
+Colocar vídeo verificador separado (obrigatório)
+	Criar texto 
+	
+Texto do contrato no config	
+
+Datavalid Demonstração
+Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb   
+Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote
+O bearer token possui 1 hora de validade.
+
+Serpro
+cpf 122.428.238-84
+Cnu#_5TCrJNi$!E
+cnpj 56990412000170
+
+Mercado pago
+clubeprive.br@gmail.com
+K@tke2024
+
+Credenciais de produção
+Public Key
+APP_USR-c19fcaa9-ffe5-453c-acaf-dac82786863e
+Access Token
+APP_USR-3050565781124052-082814-4c8663157f2fcf48d53bbe13c8ea9279-1965976946
+
+Client ID
+3050565781124052
+Client Secret
+RAC3hUtn6PxVmaJjenlUsqCYTikH526A
+
+
+Credenciais de Teste
+Public Key
+TEST-a38607d4-ccbd-41a5-a229-11bef27aea44
+Access Token
+TEST-3050565781124052-082814-4217b68de476020d47ec599b9a9d1cf3-1965976946
+
+Integração com
+CheckoutTransparente
+Modelo de integração
+Marketplace
+
+Para os testes
+Public Key
+APP_USR-22cf829f-8506-4b5f-bb28-436e82280e7c
+
+Access Token
+APP_USR-2886509531990428-020417-476b34387edd5f76a47ab7b44bef6e42-87969335
+
+Client ID
+2886509531990428
+
+Client Secret
+0sAEUiwvjgipAuUjocPKCKDNGkHO23gj
+
+Teste
+Public Key
+TEST-dabaff0b-d152-4947-938f-57d61b051bf0
+Access Token
+TEST-2886509531990428-020417-1f360786a0016b153786a41f416846a5-87969335
+
+id do plano
+2c93808494ca361a0194d3eda8c60596
+
+migration do plano
+Schema::create('planos', function (Blueprint $table) {
+            $table->id();
+            $table->string('nome');
+            $table->decimal('preco', 8, 2);
+            $table->integer('duracao_dias')->nullable(); // Duração em dias (null para ilimitado)
+            $table->string('id_plano_mp'); // ID do plano no Mercado Pago
+            $table->timestamps();
+        });
+		
+Migration Assinatura
+Schema::create('assinaturas_usuarios', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('usuario_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('plano_id')->constrained('planos')->onDelete('cascade');
+            $table->string('id_assinatura_mp'); // ID da assinatura no Mercado Pago
+            $table->string('status'); // Status da assinatura (ativo, cancelado, etc.)
+            $table->timestamps();
+        });		
+		
+920.194.258-31
+292.020.144-18
+740.133.648-08
+846.927.573-96
+347.462.496-28
+
+
+INSERT INTO `users` (`id`, `name`, `email`, `role`, `username`, `is_active`, `escolheu_plano`, `aceitou_contrato`, `fez_pagamento`) VALUES
+(10, 'Ana Oliveira', 'ana.oliveira@example.com', 'user', '98765432100', 1, 1, 1, 1),
+(11, 'Bruna Santos', 'bruna.santos@example.com', 'user', '12345678901', 1, 1, 1, 1),
+(12, 'Carla Mendes', 'carla.mendes@example.com', 'user', '23456789012', 1, 1, 1, 1),
+(13, 'Daniela Lima', 'daniela.lima@example.com', 'user', '34567890123', 1, 1, 1, 1),
+(14, 'Elaine Souza', 'elaine.souza@example.com', 'user', '45678901234', 1, 1, 1, 1),
+(15, 'Fernanda Rocha', 'fernanda.rocha@example.com', 'user', '56789012345', 1, 1, 1, 1),
+(16, 'Gabriela Martins', 'gabriela.martins@example.com', 'user', '67890123456', 1, 1, 1, 1),
+(17, 'Helena Ribeiro', 'helena.ribeiro@example.com', 'user', '78901234567', 1, 1, 1, 1),
+(18, 'Isabela Cardoso', 'isabela.cardoso@example.com', 'user', '89012345678', 1, 1, 1, 1),
+(19, 'Juliana Freitas', 'juliana.freitas@example.com', 'user', '90123456789', 1, 1, 1, 1),
+(20, 'Karen Nogueira', 'karen.nogueira@example.com', 'user', '11223344556', 1, 1, 1, 1),
+(21, 'Larissa Mendes', 'larissa.mendes@example.com', 'user', '22334455667', 1, 1, 1, 1),
+(22, 'Mariana Teixeira', 'mariana.teixeira@example.com', 'user', '33445566778', 1, 1, 1, 1),
+(23, 'Natália Xavier', 'natalia.xavier@example.com', 'user', '44556677889', 1, 1, 1, 1),
+(24, 'Olívia Melo', 'olivia.melo@example.com', 'user', '55667788990', 1, 1, 1, 1),
+(25, 'Patrícia Gomes', 'patricia.gomes@example.com', 'user', '66778899001', 1, 1, 1, 1),
+(26, 'Queila Ferreira', 'queila.ferreira@example.com', 'user', '77889900112', 1, 1, 1, 1),
+(27, 'Renata Barbosa', 'renata.barbosa@example.com', 'user', '88990011223', 1, 1, 1, 1),
+(28, 'Sabrina Silva', 'sabrina.silva@example.com', 'user', '99001122334', 1, 1, 1, 1),
+(29, 'Tatiane Costa', 'tatiane.costa@example.com', 'user', '00112233445', 1, 1, 1, 1),
+(30, 'Ursula Moreira', 'ursula.moreira@example.com', 'user', '10223344557', 1, 1, 1, 1),
+(31, 'Vanessa Almeida', 'vanessa.almeida@example.com', 'user', '21234455668', 1, 1, 1, 1),
+(32, 'Wendy Lopes', 'wendy.lopes@example.com', 'user', '32245566779', 1, 1, 1, 1),
+(33, 'Ximena Batista', 'ximena.batista@example.com', 'user', '43256677880', 1, 1, 1, 1),
+(34, 'Yasmin Duarte', 'yasmin.duarte@example.com', 'user', '54267788991', 1, 1, 1, 1),
+(35, 'Zuleica Farias', 'zuleica.farias@example.com', 'user', '65278899002', 1, 1, 1, 1),
+(36, 'Amanda Rocha', 'amanda.rocha@example.com', 'user', '76289900113', 1, 1, 1, 1),
+(37, 'Beatriz Lopes', 'beatriz.lopes@example.com', 'user', '87290011224', 1, 1, 1, 1),
+(38, 'Camila Moreira', 'camila.moreira@example.com', 'user', '98201122335', 1, 1, 1, 1),
+(39, 'Débora Ribeiro', 'debora.ribeiro@example.com', 'user', '09212233446', 1, 1, 1, 1);
+
+
+INSERT INTO `modelos` (
+    `nome_fantasia`, `telefone`, `possui_local`, `logradouro`, `bairro`, `cidade`, `uf`, `cep`, `complemento`, `numero`, 
+    `frase_impacto`, `descricao`, `valor_hora`, `slug`, `altura`, `peso`, `genero`, `genitalia`, `quem_atende`, 
+    `tatuagem`, `piercing`, `silicone`, `atende_grupo`, `user_id`, `cor_pele_id`, `cor_cabelo_id`, `cor_olho_id`, 
+    `cidade_atendimento`, `uf_atendimento`, `data_nascimento`
+) VALUES
+('Ana Clara', '(11)98765-4321', 1, 'Rua das Flores', 'Centro', 'São Paulo', 'SP', '01001-000', 'Apto 101', '123', 
+ 'Sua companhia perfeita', 'Modelo profissional com experiência em eventos.', '300', 'ana-clara', '1.70', '60', 
+ 'mulher', 'v', 'apenas_homens', 'sim_poucas', 'sim_poucos', 1, 0, 10, 1, 2, 3, 'São Paulo', 'SP', '1990-05-15'),
+
+('Bianca Lima', '(21)99876-5432', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e elegância', 'Garota de programa discreta e charmosa.', '250', 'bianca-lima', '1.65', '55', 
+ 'mulher', 'p', 'apenas_homens', 'nao', 'nao', 0, 1, 11, 2, 3, 4, 'Rio de Janeiro', 'RJ', '1992-08-20'),
+
+('Camila Santos', '(31)98765-1234', 1, 'Avenida Brasil', 'Savassi', 'Belo Horizonte', 'MG', '30140-001', 'Sala 202', '456', 
+ 'Sua diversão garantida', 'Modelo experiente e atenciosa.', '350', 'camila-santos', '1.68', '58', 
+ 'mulher', 'v', 'homens_mulheres', 'sim_muitas', 'sim_muitos', 1, 1, 12, 3, 1, 2, 'Belo Horizonte', 'MG', '1988-11-25'),
+
+('Daniela Costa', '(41)99876-4321', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Sensualidade e charme', 'Garota de programa para momentos inesquecíveis.', '400', 'daniela-costa', '1.72', '62', 
+ 'mulher', 'p', 'apenas_homens', 'sim_poucas', 'nao', 0, 0, 13, 1, 4, 3, 'Curitiba', 'PR', '1995-03-10'),
+
+('Eduarda Silva', '(51)98765-6789', 1, 'Rua dos Andradas', 'Moinhos de Vento', 'Porto Alegre', 'RS', '90035-001', 'Casa 1', '789', 
+ 'Sua companhia ideal', 'Modelo profissional e discreta.', '320', 'eduarda-silva', '1.67', '59', 
+ 'mulher', 'v', 'apenas_homens', 'nao', 'sim_poucos', 1, 1, 14, 2, 2, 1, 'Porto Alegre', 'RS', '1993-07-12'),
+
+('Fernanda Alves', '(61)99876-9876', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e sofisticação', 'Garota de programa para encontros memoráveis.', '280', 'fernanda-alves', '1.69', '61', 
+ 'mulher', 'p', 'homens_mulheres', 'sim_muitas', 'nao', 0, 0, 15, 3, 3, 4, 'Brasília', 'DF', '1991-09-18'),
+
+('Gabriela Rocha', '(71)98765-3456', 1, 'Avenida Sete de Setembro', 'Barra', 'Salvador', 'BA', '40130-001', 'Apto 303', '101', 
+ 'Sua diversão garantida', 'Modelo experiente e atenciosa.', '370', 'gabriela-rocha', '1.71', '63', 
+ 'mulher', 'v', 'apenas_homens', 'sim_poucas', 'sim_poucos', 1, 1, 16, 1, 4, 2, 'Salvador', 'BA', '1994-02-22'),
+
+('Helena Martins', '(81)99876-6543', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e elegância', 'Garota de programa discreta e charmosa.', '260', 'helena-martins', '1.66', '57', 
+ 'mulher', 'p', 'apenas_homens', 'nao', 'nao', 0, 1, 17, 2, 1, 3, 'Recife', 'PE', '1996-06-30'),
+
+('Isabela Fernandes', '(85)98765-7890', 1, 'Rua João Pessoa', 'Meireles', 'Fortaleza', 'CE', '60160-001', 'Apto 404', '202', 
+ 'Sua companhia perfeita', 'Modelo profissional com experiência em eventos.', '330', 'isabela-fernandes', '1.68', '60', 
+ 'mulher', 'v', 'homens_mulheres', 'sim_muitas', 'sim_muitos', 1, 0, 18, 3, 2, 4, 'Fortaleza', 'CE', '1990-12-05'),
+
+('Juliana Costa', '(91)99876-3210', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Sensualidade e charme', 'Garota de programa para momentos inesquecíveis.', '290', 'juliana-costa', '1.70', '62', 
+ 'mulher', 'p', 'apenas_homens', 'sim_poucas', 'nao', 0, 1, 19, 1, 3, 1, 'Belém', 'PA', '1997-04-15'),
+
+('Larissa Souza', '(92)98765-8765', 1, 'Avenida Eduardo Ribeiro', 'Centro', 'Manaus', 'AM', '69005-001', 'Casa 2', '303', 
+ 'Sua diversão garantida', 'Modelo experiente e atenciosa.', '340', 'larissa-souza', '1.69', '61', 
+ 'mulher', 'v', 'apenas_homens', 'nao', 'sim_poucos', 1, 1, 20, 2, 4, 2, 'Manaus', 'AM', '1992-10-20'),
+
+('Mariana Lima', '(95)99876-5432', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e sofisticação', 'Garota de programa para encontros memoráveis.', '270', 'mariana-lima', '1.67', '59', 
+ 'mulher', 'p', 'homens_mulheres', 'sim_muitas', 'nao', 0, 0, 21, 3, 1, 3, 'Boa Vista', 'RR', '1993-08-25'),
+
+('Natália Almeida', '(98)98765-2345', 1, 'Rua Grande', 'Centro', 'São Luís', 'MA', '65010-001', 'Apto 505', '404', 
+ 'Sua companhia ideal', 'Modelo profissional e discreta.', '360', 'natalia-almeida', '1.71', '63', 
+ 'mulher', 'v', 'apenas_homens', 'sim_poucas', 'sim_poucos', 1, 1, 22, 1, 2, 4, 'São Luís', 'MA', '1995-01-30'),
+
+('Olivia Rocha', '(99)99876-6543', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e elegância', 'Garota de programa discreta e charmosa.', '250', 'olivia-rocha', '1.66', '57', 
+ 'mulher', 'p', 'apenas_homens', 'nao', 'nao', 0, 1, 23, 2, 3, 1, 'Teresina', 'PI', '1996-07-12'),
+
+('Patricia Santos', '(84)98765-7890', 1, 'Avenida Rio Branco', 'Centro', 'Natal', 'RN', '59010-001', 'Apto 606', '505', 
+ 'Sua companhia perfeita', 'Modelo profissional com experiência em eventos.', '310', 'patricia-santos', '1.68', '60', 
+ 'mulher', 'v', 'homens_mulheres', 'sim_muitas', 'sim_muitos', 1, 0, 24, 3, 4, 2, 'Natal', 'RN', '1991-03-18'),
+
+('Quésia Fernandes', '(79)99876-3210', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Sensualidade e charme', 'Garota de programa para momentos inesquecíveis.', '280', 'quesia-fernandes', '1.70', '62', 
+ 'mulher', 'p', 'apenas_homens', 'sim_poucas', 'nao', 0, 1, 25, 1, 1, 3, 'Aracaju', 'SE', '1994-09-22'),
+
+('Rafaela Costa', '(69)98765-8765', 1, 'Rua Barão do Rio Branco', 'Centro', 'Porto Velho', 'RO', '76801-001', 'Casa 3', '606', 
+ 'Sua diversão garantida', 'Modelo experiente e atenciosa.', '330', 'rafaela-costa', '1.69', '61', 
+ 'mulher', 'v', 'apenas_homens', 'nao', 'sim_poucos', 1, 1, 26, 2, 2, 4, 'Porto Velho', 'RO', '1997-05-15'),
+
+('Sandra Lima', '(68)99876-5432', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e sofisticação', 'Garota de programa para encontros memoráveis.', '260', 'sandra-lima', '1.67', '59', 
+ 'mulher', 'p', 'homens_mulheres', 'sim_muitas', 'nao', 0, 0, 27, 3, 3, 1, 'Rio Branco', 'AC', '1990-11-30'),
+
+('Tatiane Alves', '(96)98765-2345', 1, 'Avenida Getúlio Vargas', 'Centro', 'Macapá', 'AP', '68901-001', 'Apto 707', '707', 
+ 'Sua companhia ideal', 'Modelo profissional e discreta.', '340', 'tatiane-alves', '1.71', '63', 
+ 'mulher', 'v', 'apenas_homens', 'sim_poucas', 'sim_poucos', 1, 1, 28, 1, 4, 2, 'Macapá', 'AP', '1993-02-10'),
+
+('Vanessa Souza', '(63)99876-6543', 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 
+ 'Beleza e elegância', 'Garota de programa discreta e charmosa.', '270', 'vanessa-souza', '1.66', '57', 
+ 'mulher', 'p', 'apenas_homens', 'nao', 'nao', 0, 1, 29, 2, 1, 3, 'Palmas', 'TO', '1996-08-25'),
+
+('Wanessa Lima', '(67)98765-7890', 1, 'Rua Barão do Rio Branco', 'Centro', 'Campo Grande', 'MS', '79002-001', 'Apto 808', '808', 
+ 'Sua companhia perfeita', 'Modelo profissional com experiência em eventos.', '320', 'wanessa-lima', '1.68', '60', 
+ 'mulher', 'v', 'homens_mulheres', 'sim_muitas', 'sim_muitos', 1, 0, 30, 3, 2, 4, 'Campo Grande', 'MS', '1991-04-20');
+
+INSERT INTO `modelo_servico` (`modelo_id`, `servico_id`, `created_at`, `updated_at`) VALUES
+-- Serviços para a modelo 1 (Ana Clara)
+(1, 1, NOW(), NOW()),
+(1, 2, NOW(), NOW()),
+(1, 3, NOW(), NOW()),
+
+-- Serviços para a modelo 2 (Bianca Lima)
+(2, 4, NOW(), NOW()),
+(2, 5, NOW(), NOW()),
+
+-- Serviços para a modelo 3 (Camila Santos)
+(3, 6, NOW(), NOW()),
+(3, 7, NOW(), NOW()),
+(3, 8, NOW(), NOW()),
+
+-- Serviços para a modelo 4 (Daniela Costa)
+(4, 9, NOW(), NOW()),
+(4, 10, NOW(), NOW()),
+
+-- Serviços para a modelo 5 (Eduarda Silva)
+(5, 11, NOW(), NOW()),
+(5, 1, NOW(), NOW()),
+(5, 2, NOW(), NOW()),
+
+-- Serviços para a modelo 6 (Fernanda Alves)
+(6, 3, NOW(), NOW()),
+(6, 4, NOW(), NOW()),
+
+-- Serviços para a modelo 7 (Gabriela Rocha)
+(7, 5, NOW(), NOW()),
+(7, 6, NOW(), NOW()),
+(7, 7, NOW(), NOW()),
+
+-- Serviços para a modelo 8 (Helena Martins)
+(8, 8, NOW(), NOW()),
+(8, 9, NOW(), NOW()),
+
+-- Serviços para a modelo 9 (Isabela Fernandes)
+(9, 10, NOW(), NOW()),
+(9, 11, NOW(), NOW()),
+(9, 1, NOW(), NOW()),
+
+-- Serviços para a modelo 10 (Juliana Costa)
+(10, 2, NOW(), NOW()),
+(10, 3, NOW(), NOW()),
+
+-- Serviços para a modelo 11 (Larissa Souza)
+(11, 4, NOW(), NOW()),
+(11, 5, NOW(), NOW()),
+(11, 6, NOW(), NOW()),
+
+-- Serviços para a modelo 12 (Mariana Lima)
+(12, 7, NOW(), NOW()),
+(12, 8, NOW(), NOW()),
+
+-- Serviços para a modelo 13 (Natália Almeida)
+(13, 9, NOW(), NOW()),
+(13, 10, NOW(), NOW()),
+(13, 11, NOW(), NOW()),
+
+-- Serviços para a modelo 14 (Olivia Rocha)
+(14, 1, NOW(), NOW()),
+(14, 2, NOW(), NOW()),
+
+-- Serviços para a modelo 15 (Patricia Santos)
+(15, 3, NOW(), NOW()),
+(15, 4, NOW(), NOW()),
+(15, 5, NOW(), NOW()),
+
+-- Serviços para a modelo 16 (Quésia Fernandes)
+(16, 6, NOW(), NOW()),
+(16, 7, NOW(), NOW()),
+
+-- Serviços para a modelo 17 (Rafaela Costa)
+(17, 8, NOW(), NOW()),
+(17, 9, NOW(), NOW()),
+(17, 10, NOW(), NOW()),
+
+-- Serviços para a modelo 18 (Sandra Lima)
+(18, 11, NOW(), NOW()),
+(18, 1, NOW(), NOW()),
+
+-- Serviços para a modelo 19 (Tatiane Alves)
+(19, 2, NOW(), NOW()),
+(19, 3, NOW(), NOW()),
+(19, 4, NOW(), NOW()),
+
+-- Serviços para a modelo 20 (Vanessa Souza)
+(20, 5, NOW(), NOW()),
+(20, 6, NOW(), NOW()),
+
+-- Serviços para a modelo 21 (Wanessa Lima)
+(21, 7, NOW(), NOW()),
+(21, 8, NOW(), NOW()),
+(21, 9, NOW(), NOW());
+
+update users u set password=bcrypt("q1w2e3r4");

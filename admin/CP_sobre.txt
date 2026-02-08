@@ -1,0 +1,142 @@
+Cadastro
+Data valid
+Escolher o plano
+Assina
+Confirma
+Abre o contrato (nome e cpf) / Aceitar 
+Pagamento
+Retorno (ok/nok)
+Email com senha provisória (link e login - cpf) Senha: cp + 6 primeiros digitos do cpf
+
+Foto principal, dentro dos Meus Dados (formato Story - Vertical)
+Colocar vídeo verificador separado (obrigatório)
+	Criar texto 
+	
+Texto do contrato no config	
+
+Datavalid Demonstração
+Consumer Key: djaR21PGoYp1iyK2n2ACOH9REdUb   
+Consumer Secret: ObRsAJWOL4fv2Tp27D1vd8fB3Ote
+
+Datavalid real
+Consumer Key
+nWk1F5O8Aon_BnfmEV55yUc2E3Aa
+
+Consumer Secret
+VPXmWh5PTDRK6YSvVzry9PeRMbUa
+
+O bearer token possui 1 hora de validade.
+
+Serpro
+cpf 122.428.238-84
+Cnu#_5TCrJNi$!E
+cnpj 56990412000170
+
+Mercado pago
+clubeprive.br@gmail.com
+K@tke2024
+
+APLICAÇÃO
+APP_USR-a424b31b-a2e3-4e2b-a6b3-b9a81b8fed81
+APP_USR-4623719711381825-022520-4c7509d1a418eeac9b4642974b427e5b-1965976946
+
+CLIENTE ID
+4623719711381825
+Client Secret
+RtmJsrcR2tJFWN95KqqIBqhJX3vGWrNY
+
+TESTE
+Public Key
+TEST-e11f5198-a004-49eb-8086-a02ea844be55
+Access Token
+TEST-4623719711381825-022520-1c6c39b0867ab6748580dc1de7b7f51c-1965976946
+
+
+Minhas credenciais 
+
+Teste
+Public Key
+TEST-dabaff0b-d152-4947-938f-57d61b051bf0
+Access Token
+TEST-2886509531990428-020417-1f360786a0016b153786a41f416846a5-87969335
+
+Produção
+Public Key
+APP_USR-22cf829f-8506-4b5f-bb28-436e82280e7c
+Access Token
+APP_USR-2886509531990428-020417-476b34387edd5f76a47ab7b44bef6e42-87969335
+
+Client ID
+2886509531990428
+
+Client Secret
+0sAEUiwvjgipAuUjocPKCKDNGkHO23gj
+
+Assinatura secreta para webhook
+ff684e37d7bdbf10dd2dfc2434cd7d6b0ee3fcdc4b826eeb4f805dfa728440c0
+
+No EDGE
+PRODUÇÃo
+public key: 		APP_USR-7549e6bb-0185-4b2b-adfd-5f19a2b9e82b
+access token: 		APP_USR-5701721800021213-022022-253cd0aecee3054882ec2a4a221a1d4c-1749225004
+client id: 			5701721800021213
+client secret:		NAs7ROMnxikfDBEzMYqgn5LnCQtg2EeA
+
+Assinatura secreta webhook em sandbox
+028912f884d7878464a70b500a55cc3175e1881ead6deaeea6c25a02eb742b72
+
+Teste
+Public Key
+TEST-d4258f4c-e4b3-4525-a7c2-240a0bfb9e34
+Access Token
+TEST-5701721800021213-022022-d1ea9207094121f6d328ca5c27e6b285-1749225004
+
+
+https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808494dc05c90194dc471f99002a
+
+
+		
+920.194.258-31
+292.020.144-18
+740.133.648-08
+846.927.573-96
+347.462.496-28
+
+
+
+
+
+https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808494f9e81b01952015eea9129b
+
+<a href="https://www.mercadopago.com.br/subscriptions/checkout?preapproval_plan_id=2c93808494f9e81b01952015eea9129b" name="MP-payButton" class='blue-ar-l-rn-none'>Suscribirme</a>
+<script type="text/javascript">
+   (function() {
+      function $MPC_load() {
+         window.$MPC_loaded !== true && (function() {
+         var s = document.createElement("script");
+         s.type = "text/javascript";
+         s.async = true;
+         s.src = document.location.protocol + "//secure.mlstatic.com/mptools/render.js";
+         var x = document.getElementsByTagName('script')[0];
+         x.parentNode.insertBefore(s, x);
+         window.$MPC_loaded = true;
+      })();
+   }
+   window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;
+   })();
+  /*
+        // to receive event with message when closing modal from congrants back to site
+        function $MPC_message(event) {
+          // onclose modal ->CALLBACK FUNCTION
+         // !!!!!!!!FUNCTION_CALLBACK HERE Received message: {event.data} preapproval_id !!!!!!!!
+        }
+        window.$MPC_loaded !== true ? (window.addEventListener("message", $MPC_message)) : null; 
+        */
+</script>
+
+
+Plano 1
+2c93808495079466019528dc44f8100e
+
+Plano 2
+2c93808494f9e81b019528dc97bd1774

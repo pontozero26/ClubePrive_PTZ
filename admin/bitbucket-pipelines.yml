@@ -1,0 +1,24 @@
+pipelines:
+  default:
+    - step:
+        name: Deploy Laravel App
+        image: php:8.1-cli
+        caches:
+          - composer
+        script:
+          - apt-get update && apt-get install -y unzip git openssh-client rsync
+          - mkdir -p /home/clubepuser/.ssh
+          - echo "$SSH_PRIVATE_KEY" > /home/clubepuser/.ssh/id_rsa
+          - chmod 600 /home/clubepuser/.ssh/id_rsa
+          - eval "$(ssh-agent -s)"
+          - ssh-add /home/clubepuser/.ssh/id_rsa
+          - ssh -o StrictHostKeyChecking=no -p 7773 clubepuser@200.201.207.140 << EOF
+              cd /home/clubepuser/public_html
+              git pull origin main
+              composer install --no-dev --optimize-autoloader
+              php artisan migrate --force
+              php artisan config:cache
+              php artisan route:cache
+              php artisan view:cache
+              exit
+            EOF

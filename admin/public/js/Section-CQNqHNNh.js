@@ -1,0 +1,1 @@
+import{j as e}from"./index-DVfqweaZ.js";const o="_section_96bq3_1",i="_section_clean_96bq3_4",s={section:o,section_clean:i},a=({children:t,className:n,clean:c})=>e.jsx("section",{className:`${s.section} ${n||""} ${c?s.section_clean:""}`,children:t});export{a as S};

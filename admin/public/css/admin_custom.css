@@ -1,0 +1,108 @@
+.brand-link {
+    height: 57px;
+    background: red;
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
+    background: red;
+}
+
+/* .nav-sidebar .nav-link p {
+    color: black;
+    font-weight: 500;
+    font-size:0.9rem;
+} */
+
+
+/* a.nav-link.active {
+    color: red;
+    background-color: red;
+}  */
+
+
+.img-banner {
+    width: 100px;
+}
+.project-actions {
+    display: flex;
+    gap: 4px;
+}
+/* .sidebar-dark-primary {
+    background-color: lightgray;
+} */
+
+.card-secondary:not(.card-outline)>.card-header {
+    background-color: #112749;
+}
+
+.gallery {
+    width: 100%;
+    background: #f3f3f3;
+    border: 1px solid #112749;
+    display: flex;
+    padding: 15px;
+    margin-top: 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.gallery img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+
+}
+
+.dt-length {
+    font-weight: normal;
+}
+
+.dt-button {
+    height: 25px;
+    font-size: smaller;
+}
+
+.dt-info,
+.dt-length,
+.dt-search,
+.dt-paging ,
+table.dataTable th,
+table.dataTable td ,
+.dt-paging-button.disabled,
+.form-control
+{
+    font-size: smaller;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    font-weight: 600;
+}
+
+.alert {
+    display: flex;
+    align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+    margin-bottom: 1px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 15px;
+    font-size: smaller;
+}
+
+.alert .close {
+    padding: 0;
+    margin-left: auto; /* Move o botão de fechar para a extrema direita */
+    margin-right: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center; /* Alinha o botão de fechar verticalmente ao centro */
+}
+
+.table td, .table th {
+    font-size: smaller;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+    font-size: smaller;
+}

@@ -1,0 +1,483 @@
+@import url("./reset.css");
+
+:root {
+	/* FONT */
+	--font-fammly: "Montserrat", serif;
+
+	/* COLORS */
+	--color-main: #51514d;
+	--color-white: #ffffff;
+
+	--color-grey: #d9d6d6;
+	--color-grey-l: #f6f6f6;
+
+	--color-primary: #9b0311;
+	--color-secundary: #032e9b;
+
+	--color-red: #dc0418;
+	--color-green: #48b02c;
+}
+
+body {
+	font-family: var(--font-fammly);
+	font-size: 16px;
+	color: var(--color-main);
+	overflow-x: hidden;
+}
+
+p {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+p + p {
+	margin-top: 20px;
+}
+
+.screen {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 40px;
+	width: 100vw;
+	padding: 50px 20px;
+	box-sizing: border-box;
+	border-top: 5px solid var(--color-primary);
+}
+
+.screen * {
+	box-sizing: border-box;
+}
+
+.screen-header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+}
+
+.content {
+}
+
+.center {
+	display: flex;
+	justify-content: center;
+}
+
+/* 
+  ##########################################
+  ################# STEPS ##################
+  ##########################################
+*/
+.steps {
+	display: flex;
+	gap: 60px;
+}
+
+.steps-item {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-decoration: none;
+}
+
+.steps-item:before {
+	content: attr(data-steps-number);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 45px;
+	height: 45px;
+	border-radius: 100%;
+	background-color: var(--color-grey);
+	font-size: 30px;
+	font-weight: 700;
+	color: var(--color-white);
+}
+
+.steps-item.active:before {
+	background-color: var(--color-secundary);
+}
+
+.steps-item-text {
+	font-weight: 700;
+	color: var(--color-main);
+}
+
+.steps-item-text small {
+	font-size: 12px;
+	display: block;
+}
+
+/* 
+  ##########################################
+  ################### BOX ##################
+  ##########################################
+*/
+.box {
+	background-color: var(--color-grey-l);
+	padding: 20px 30px;
+	border-radius: 15px;
+	width: 100%;
+	max-width: 480px;
+}
+
+.box-head {
+}
+
+.box-head-center h2 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.box-head h2 {
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.box-head h2 small {
+	display: flex;
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.box-content {
+	margin-top: 30px;
+}
+
+.box-content form {
+}
+
+.box-content form ul {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.box-content form ul li {
+}
+
+.box-content form ul li label {
+	display: block;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	margin: 0 0 5px 10px;
+}
+
+.box-content form ul li input {
+	width: 100%;
+	height: 40px;
+	border: 2px solid var(--color-secundary);
+	border-radius: 5px;
+	padding-inline: 15px;
+	outline: none;
+	font-family: var(--font-fammly);
+	font-size: 14px;
+	transition: 200ms ease-in-out;
+}
+
+.box-content form ul li input:focus {
+	box-shadow: 0 0 3px 3px rgba(3, 46, 155, 0.3);
+}
+
+/* ALERT */
+.input-alert {
+	position: relative;
+	appearance: none;
+}
+
+.input-alert:after {
+	content: "";
+	position: absolute;
+	right: 10px;
+	top: 13px;
+	width: 20px;
+	height: 20px;
+	background-position: left -3px;
+	background-repeat: no-repeat;
+	background-size: 20px;
+}
+
+.input-alert.success:after {
+	background-image: url("../img/check.png");
+}
+
+.input-alert.error:after {
+	background-image: url("../img/close.png");
+}
+
+.box-content form ul li .input-alert.success input[data-alert-type][data-alert-type="success"] {
+	border-color: var(--color-green);
+}
+
+.box-content
+	form
+	ul
+	li
+	.input-alert.success
+	input[data-alert-type][data-alert-type="success"]
+	+ .alert-text {
+	color: var(--color-green);
+}
+
+.box-content form ul li .input-alert.error input[data-alert-type][data-alert-type="error"] {
+	border-color: var(--color-red);
+}
+
+.box-content
+	form
+	ul
+	li
+	.input-alert.error
+	input[data-alert-type][data-alert-type="error"]
+	+ .alert-text {
+	color: var(--color-red);
+}
+
+.box-content form ul li .alert-text {
+	margin-top: 5px;
+	display: block;
+	font-size: 12px;
+}
+
+/* 
+  ##########################################
+  ################### BTN ##################
+  ##########################################
+*/
+.btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	font-family: var(--font-fammly);
+	font-size: 13px;
+	font-weight: 500;
+	border-radius: 10px;
+	cursor: pointer;
+	height: 45px;
+	padding-inline: 30px;
+	text-transform: uppercase;
+	appearance: none;
+	border: none;
+	transition: 200ms ease-in-out;
+	background-color: var(--color-secundary);
+	color: var(--color-white);
+}
+
+.btn:hover {
+	background-color: var(--color-primary);
+}
+
+/* 
+  ##########################################
+  ################## PLANS #################
+  ##########################################
+*/
+.plans {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 35px;
+	min-width: 1000px;
+}
+
+.box-plan {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.box-plan > div:first-child {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.box-plan-title {
+	font-size: 18px;
+	color: var(--color-secundary);
+	font-weight: 700;
+}
+
+.box-plan-price {
+	font-size: 36px;
+	font-weight: 700;
+}
+
+.box-plan-price:before {
+	content: "R$";
+	font-size: 24px;
+	font-weight: 700;
+	margin-right: 7px;
+}
+
+.box-plan-price:after {
+	content: "/mês";
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.box-plan-text p {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.box-plan-list {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.box-plan-list li {
+	padding-left: 25px;
+	font-size: 14px;
+	font-weight: 500;
+	background-image: url("../img/check.png");
+	background-position: left -3px;
+	background-repeat: no-repeat;
+	background-size: 20px;
+}
+
+.box-plan-list li.not {
+	background-image: url("../img/close.png");
+	opacity: 0.5;
+}
+
+/* 
+  ##########################################
+  ################ CONTRACT ################
+  ##########################################
+*/
+.box-contract {
+	flex: 1;
+	max-width: 1300px;
+}
+
+.box-scroll {
+	max-height: 400px;
+	overflow-y: auto;
+	padding-right: 20px;
+}
+
+/* width */
+.box-scroll::-webkit-scrollbar {
+	width: 8px;
+}
+
+/* Track */
+.box-scroll::-webkit-scrollbar-track {
+	background: var(--color-white);
+}
+
+/* Handle */
+.box-scroll::-webkit-scrollbar-thumb {
+	background: var(--color-secundary);
+}
+
+/* Handle on hover */
+.box-scroll::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+
+.box-contract-switch {
+	margin-top: 20px;
+	padding-block: 15px;
+}
+
+/* 
+  ##########################################
+  ################# SWITCH #################
+  ##########################################
+*/
+.swtich {
+	display: flex;
+	gap: 10px;
+	cursor: pointer;
+}
+
+.swtich input[type="checkbox"] {
+	position: relative;
+	appearance: none;
+	width: 42px;
+	height: 22px;
+	border-radius: 12px;
+	background-color: var(--color-grey);
+	cursor: pointer;
+	margin: 0;
+}
+
+.swtich input[type="checkbox"]:before {
+	content: "";
+	position: absolute;
+	width: 18px;
+	height: 18px;
+	border-radius: 100%;
+	background-color: var(--color-white);
+	left: 2px;
+	top: 2px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.05);
+	transition: 200ms ease-in-out;
+}
+
+.swtich input[type="checkbox"]:checked {
+	background-color: var(--color-secundary);
+}
+
+.swtich input[type="checkbox"]:checked:before {
+	left: 22px;
+}
+
+.swtich span {
+	flex: 1;
+	margin-top: 2px;
+	font-size: 14px;
+	line-height: 18px;
+	font-weight: 500;
+}
+
+/* 
+  ##########################################
+  ################# WELCOME ################
+  ##########################################
+*/
+.box-welcome .center {
+	margin-top: 30px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+	.screen {
+		gap: 20px;
+		padding: 15px;
+	}
+
+	.screen-header {
+		width: 100%;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 10px;
+	}
+
+	.screen-header .logo img {
+		max-width: 130px;
+	}
+
+	.steps-item:not(.active) {
+		display: none;
+	}
+
+	.plans {
+		min-width: 100%;
+	}
+
+	.box {
+		padding: 20px;
+	}
+}
